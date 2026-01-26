@@ -104,12 +104,6 @@ const CardNav = ({
 
     tl.to(cardsRef.current, { y: 0, opacity: 1, duration: 0.4, ease, stagger: 0.08 }, '-=0.1')
 
-    tl.eventCallback('onReverseStart', () => {
-      if (navEl) {
-        navEl.style.overflow = 'hidden'
-      }
-    })
-
     return tl
   }
 
@@ -156,13 +150,20 @@ const CardNav = ({
 
   const toggleMenu = () => {
     const tl = tlRef.current
+    const navEl = navRef.current
     if (!tl) return
     if (!isExpanded) {
       setIsHamburgerOpen(true)
       setIsExpanded(true)
+      if (navEl) {
+        navEl.style.overflow = 'visible'
+      }
       tl.play(0)
     } else {
       setIsHamburgerOpen(false)
+      if (navEl) {
+        navEl.style.overflow = 'hidden'
+      }
       tl.eventCallback('onReverseComplete', () => setIsExpanded(false))
       tl.reverse()
     }
