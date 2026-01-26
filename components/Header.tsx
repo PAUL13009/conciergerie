@@ -39,11 +39,10 @@ export default function Header() {
   return (
     <CardNav
       items={navItems}
-      baseColor="rgba(255, 255, 255, 0.1)"
+      baseColor="#000000"
       menuColor="#fff"
       buttonBgColor="rgba(255, 255, 255, 0.2)"
       buttonTextColor="#fff"
-      className="backdrop-blur-md"
     />
   )
 }

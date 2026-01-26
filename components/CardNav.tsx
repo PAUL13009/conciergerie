@@ -1,6 +1,6 @@
 'use client'
 
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useLayoutEffect, useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { GoArrowUpRight } from 'react-icons/go'
 import './CardNav.css'
@@ -42,8 +42,11 @@ const CardNav = ({
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false)
   const [isExpanded, setIsExpanded] = useState(false)
   const navRef = useRef<HTMLElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<(HTMLDivElement | null)[]>([])
   const tlRef = useRef<gsap.core.Timeline | null>(null)
+  const lastScrollY = useRef(0)
+  const scrollAnimationRef = useRef<gsap.core.Tween | null>(null)
 
   const calculateHeight = () => {
     const navEl = navRef.current
@@ -148,6 +151,52 @@ const CardNav = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isExpanded])
 
+  // Scroll effect to hide/show header
+  useEffect(() => {
+    const handleScroll = () => {
+      // Don't hide header if menu is expanded
+      if (isExpanded) return
+
+      const currentScrollY = window.scrollY
+      const container = containerRef.current
+
+      if (!container) return
+
+      // Kill previous animation if exists
+      if (scrollAnimationRef.current) {
+        scrollAnimationRef.current.kill()
+      }
+
+      // Show header when scrolling up or at top
+      if (currentScrollY < lastScrollY.current || currentScrollY < 100) {
+        scrollAnimationRef.current = gsap.to(container, {
+          y: 0,
+          duration: 0.3,
+          ease: 'power2.out'
+        })
+      }
+      // Hide header when scrolling down (only if scrolled past 100px)
+      else if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        const navHeight = navRef.current?.offsetHeight || 60
+        scrollAnimationRef.current = gsap.to(container, {
+          y: -navHeight,
+          duration: 0.3,
+          ease: 'power2.out'
+        })
+      }
+
+      lastScrollY.current = currentScrollY
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (scrollAnimationRef.current) {
+        scrollAnimationRef.current.kill()
+      }
+    }
+  }, [isExpanded])
+
   const toggleMenu = () => {
     const tl = tlRef.current
     const navEl = navRef.current
@@ -174,7 +223,7 @@ const CardNav = ({
   }
 
   return (
-    <div className={`card-nav-container ${className}`}>
+    <div ref={containerRef} className={`card-nav-container ${className}`}>
       <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`} style={{ backgroundColor: baseColor }}>
         <div className="card-nav-top">
           <div
