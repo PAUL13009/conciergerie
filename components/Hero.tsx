@@ -52,7 +52,7 @@ export default function Hero() {
               className="tracking-[-0.02em] inline-block" 
               style={{ fontWeight: 400, letterSpacing: '-0.03em' }}
             >
-              Les Pipelettes
+              SOHO Conciergerie
             </span>
             <br />
             <span 

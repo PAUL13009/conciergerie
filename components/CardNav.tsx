@@ -243,7 +243,7 @@ const CardNav = ({
               <img src={logo} alt={logoAlt} className="logo" />
             ) : (
               <a href="#" className="text-xl sm:text-2xl font-bold text-white drop-shadow-md tracking-tight" style={{ color: '#ffffff' }}>
-                <span className="tracking-[-0.01em]">Les Pipelettes</span>
+                <span className="tracking-[-0.01em]">SOHO Conciergerie</span>
               </a>
             )}
           </div>

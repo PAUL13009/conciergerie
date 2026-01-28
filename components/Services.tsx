@@ -23,7 +23,7 @@ export default function Services() {
       title: 'Accueil des Voyageurs',
       category: 'SERVICE CLIENT',
       description: 'Accueil personnalisé et assistance 24/7 pour vos invités tout au long de leur séjour, garantissant une expérience exceptionnelle.',
-      image: 'https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?q=80&w=2076&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop',
     },
     {
       id: 4,
