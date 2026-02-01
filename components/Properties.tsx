@@ -27,11 +27,11 @@ export default function Properties() {
   ]
 
   return (
-    <section id="properties" className="section-padding bg-gray-50">
+    <section id="properties" className="section-padding bg-stone-50">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="mb-16 md:mb-24">
-          <div className="flex items-center gap-3 mb-4">
+        <div className="mb-16 md:mb-24 text-center">
+          <div className="flex items-center justify-center gap-3 mb-4">
             <span className="text-xs sm:text-sm uppercase tracking-wider text-gray-500 font-medium">
               NOS PROPRIÉTÉS
             </span>
@@ -47,7 +47,7 @@ export default function Properties() {
               />
             </svg>
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-gray-900 leading-tight uppercase">
             Découvrir nos
             <br />
             propriétés
@@ -76,12 +76,31 @@ export default function Properties() {
                 <div className="text-xs sm:text-sm uppercase tracking-wider text-gray-300 font-medium mb-2">
                   {property.category}
                 </div>
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-medium text-white uppercase">
                   {property.title}
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* CTA Button */}
+        <div className="flex justify-center mt-12 md:mt-16">
+          <button className="inline-flex items-center gap-2 px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-900 font-normal rounded-lg transition-colors duration-300">
+            <span>Voir toutes les propriétés</span>
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </button>
         </div>
       </div>
     </section>

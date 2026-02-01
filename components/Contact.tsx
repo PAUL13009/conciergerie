@@ -28,7 +28,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left Side - Info */}
           <div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 lg:mb-8">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium mb-6 lg:mb-8 uppercase">
               Contactez-nous<span className="text-white">*</span>
             </h2>
             <p className="text-base sm:text-lg text-gray-400 mb-12 lg:mb-16 leading-relaxed max-w-lg">

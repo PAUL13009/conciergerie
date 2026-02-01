@@ -21,11 +21,11 @@ export default function Testimonials() {
   ]
 
   return (
-    <section id="testimonials" className="section-padding bg-white">
+    <section id="testimonials" className="section-padding bg-stone-50">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-primary-900 mb-4 uppercase">
             Ce que disent nos clients
           </h2>
           <p className="text-lg text-primary-600 max-w-2xl mx-auto">

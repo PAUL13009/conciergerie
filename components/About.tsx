@@ -1,10 +1,10 @@
 export default function About() {
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="about" className="section-padding bg-stone-50">
       <div className="container-custom">
         {/* Section Title - Top Right */}
         <div className="flex justify-center lg:justify-end mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 uppercase">
             Pourquoi nous choisir ?
           </h2>
         </div>
@@ -25,26 +25,26 @@ export default function About() {
           <div className="order-1 lg:order-2 space-y-8 lg:space-y-10">
             {/* Top Text Block - Main Statement */}
             <div>
-              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed">
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed text-center">
                 Nous sommes une équipe de professionnels passionnés qui croyons en la création d'expériences mémorables pour vos voyageurs. Notre histoire est construite sur l'excellence du service, l'innovation dans la gestion et la volonté de transformer chaque location en une expérience exceptionnelle.
               </p>
             </div>
 
             {/* Middle Text Block - Process/Inquiry */}
             <div className="pt-4">
-              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed text-center">
                 Nous nous demandons : Quel est votre objectif de revenus ? Qui sont vos voyageurs cibles ? Comment rendre leur séjour parfait ? Nous commençons par comprendre vos besoins, vos attentes et votre vision pour optimiser votre propriété.
               </p>
             </div>
 
             {/* Bottom Text Block - Mission/Testimonial */}
             <div className="pt-4">
-              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed text-center">
                 Nous visons à rassembler expertise locale, technologie moderne et service client d'exception, transformant chaque propriété en une source de revenus optimale et une expérience inoubliable pour vos invités.
               </p>
 
               {/* Author Section */}
-              <div className="flex items-center gap-4 mt-6">
+              <div className="flex items-center justify-center gap-4 mt-6">
                 <div className="flex-shrink-0">
                   <img
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop&w=100&h=100"
